@@ -1,16 +1,10 @@
-#pragma once
+#include "headers/parser.hpp"
 
-#include <vector>
-#include <string>
-#include <fstream>
-#include <algorithm>
-#include "Rectangle.hpp"
-
-std::vector<int> getCoordsFromString(const std::string &str)
+std::vector<size_t> getCoordsFromString(const std::string &str)
 {
-    std::vector<int> res;
+    std::vector<size_t> res;
     std::string tmp;
-    for (int i = 0; i < str.size(); ++i)
+    for (size_t i = 0; i < str.size(); ++i)
     {
         tmp = "";
         while (str[i] != ',')

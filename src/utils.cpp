@@ -1,9 +1,4 @@
-#pragma once
-
-#include <string>
-#include <fstream>
-#include <random>
-#include <iomanip>
+#include "headers/utils.hpp"
 
 namespace utils
 {
@@ -22,8 +17,8 @@ namespace utils
 
     std::string getRandomColor()
     {
-        std::random_device rd;
-        std::mt19937 gen(rd());
+        static std::random_device rd;
+        static std::mt19937 gen(rd());
         std::uniform_int_distribution<int> dis(0, 255);
 
         int red = dis(gen);

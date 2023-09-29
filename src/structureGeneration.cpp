@@ -1,23 +1,4 @@
-#pragma once
-
-#include <string>
-#include <vector>
-#include <map>
-#include <algorithm>
-
-#include "Rectangle.hpp"
-
-struct Dimensions
-{
-    int colSpan, rowSpan;
-};
-
-struct Range
-{
-    int start, end;
-};
-
-using IterateStructure = std::map<int, std::vector<std::pair<int, Dimensions>>>;
+#include "headers/structureGeneration.hpp"
 
 const Rectangle *containsRect(int i, int j, const std::vector<Rectangle> &rectangles)
 {
