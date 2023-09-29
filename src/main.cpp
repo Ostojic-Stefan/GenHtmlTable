@@ -30,12 +30,11 @@ int main(int argc, char *argv[])
     if (!std::filesystem::exists(filePath))
     {
         std::cerr << "Provided File does not exist\n";
-        exit(1);
+        return 1;
     }
 
     std::vector<Rectangle> rectangles = parseInput(argv[1]);
 
-    // const std::vector<Rectangle> rectangles = parseInput("./assets/Rectangles.txt");
     const auto &[width, height] = getTableDimensions(rectangles);
     const auto structure = genStructure(width, height, rectangles);
     const std::string result = genTable(structure);

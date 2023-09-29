@@ -11,9 +11,6 @@ all: $(TARGET)
 $(TARGET): $(SRC_FILES)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-run: $(TARGET)
-	./$(TARGET)
-
 clean:
 	rm -rf $(TARGET)
 
