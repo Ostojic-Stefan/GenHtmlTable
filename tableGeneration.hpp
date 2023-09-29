@@ -6,10 +6,10 @@
 
 #include "structureGeneration.hpp"
 #include "Rectangle.hpp"
+#include "utils.hpp"
 
 std::string genTable(const IterateStructure &structure)
 {
-    std::string result;
     std::stringstream ss;
 
     ss << "<table>\n";
@@ -18,7 +18,15 @@ std::string genTable(const IterateStructure &structure)
         ss << "<tr>\n";
         for (const auto &pair : data)
         {
-            ss << "\t<td rowspan='" << pair.second.rowSpan << "' colspan='" << pair.second.colSpan << "'></td>\n";
+            std::string color = utils::getRandomColor();
+            if (pair.second.colSpan != 1 || pair.second.rowSpan != 1)
+            {
+                ss << "\t<td style='background-color:" << color << "' rowspan='" << pair.second.rowSpan << "' colspan='" << pair.second.colSpan << "'></td>\n";
+            }
+            else
+            {
+                ss << "\t<td></td>\n";
+            }
         }
         ss << "</tr>\n";
     }

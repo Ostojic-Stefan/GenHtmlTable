@@ -19,7 +19,6 @@ void outputHtml(const std::string &contents, const std::string &templateFilename
 }
 
 int main(int argc, char *argv[])
-
 {
     // if (argc != 2)
     // {
